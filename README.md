@@ -15,6 +15,10 @@ A professional, data-driven Streamlit web application for comprehensive family b
 - Simple forward spending forecast and an insights / recommendations tab
 - Download full data or a short summary as CSV
 
+## Dashboard Preview
+![Overview](images/family-budget-overview.png)
+![Forecast](images/family-budget-forecast.png)
+
 ## 🎯 Features
 
 ### 📊 Comprehensive Analytics
@@ -127,7 +131,17 @@ Place the file as `sample_transactions.csv` in the project root, or rely on the 
 - **Pandas** — Data handling  
 - **NumPy** — Numeric helpers (trends, samples)  
 - **Plotly** — Interactive charts  
-- **Python 3**  
+- **Python 3**
+
+## Skills Demonstrated
+
+- Data Cleaning
+- Exploratory Data Analysis
+- KPI Development
+- Time Series Trend Analysis
+- Forecasting Logic
+- Interactive Dashboard Design
+- Business Insight Communication
 
 ## 🔧 Configuration
 
@@ -143,6 +157,17 @@ Place the file as `sample_transactions.csv` in the project root, or rely on the 
 ## 🤝 Contributing
 
 Contributions are welcome via Pull Request.
+
+## Why This Project Matters
+
+This project demonstrates the kind of applied analytics and product thinking used in real data science and analytics roles:
+
+- ingesting and validating raw transaction data
+- cleaning and standardizing records for analysis
+- computing KPI-level business metrics
+- identifying category-level spending behavior
+- forecasting future spending patterns
+- translating data into recommendations and decisions
 
 ## 📝 License
 
