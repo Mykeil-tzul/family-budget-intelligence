@@ -7,87 +7,103 @@ A professional, data-driven Streamlit web application for comprehensive family b
 ![License](https://img.shields.io/badge/License-MIT-green)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
+## What it does
+
+- Loads bank-style CSV exports or generates demo transactions
+- Surfaces monthly spending trends, category breakdowns, and comparisons
+- Surfaces pattern views (category trends, day/week heatmaps)
+- Simple forward spending forecast and an insights / recommendations tab
+- Download full data or a short summary as CSV
+
 ## 🎯 Features
 
 ### 📊 Comprehensive Analytics
-- **Monthly Spending Trends**: Track spending patterns over time with trend lines
-- **Category Analysis**: Detailed breakdown of spending by category with pie charts and statistics
-- **Pattern Recognition**: Daily and weekly heatmaps revealing spending behaviors
-- **Top Categories**: Identify highest spending areas at a glance
+
+- **Monthly Spending Trends**: Track spending over time with trend lines
+- **Category Analysis**: Breakdown by category with pie charts and statistics
+- **Pattern Recognition**: Heatmaps for day-and-week spending patterns
+- **Top Categories**: See highest-spend areas quickly
 
 ### 📈 Advanced Insights
-- **Spending Forecasts**: Predictive analytics for future spending patterns
-- **Variance Analysis**: Compare spending patterns across different time periods
-- **Category Trends**: Monitor how each category's spending evolves over time
-- **Transaction Metrics**: Average transaction size, daily spend, frequency analysis
+
+- **Spending Forecasts**: Projections a few months ahead (exponential smoothing)
+- **Category Trends**: Top categories over time
+- **Transaction Metrics**: Totals, averages, and transaction counts for the selected range
 
 ### 🎛️ Interactive Controls
-- **Date Range Filtering**: Custom date range selection for focused analysis
-- **Category Filters**: Deep dive into specific spending categories
-- **Responsive Design**: Fully responsive dashboard that works on all devices
-- **Export Capabilities**: Download full datasets and summary reports
+
+- **Date Range Filtering**: Focus analysis on a period
+- **Category Filters**: Filter the dataset by category
+- **Export**: Download the full dataset or a summary CSV
 
 ### 💡 Smart Recommendations
-- Spending pattern insights and alerts
-- Budget optimization suggestions
-- Trend analysis with actionable recommendations
-- Monthly vs historical comparisons
+
+- Highlights top spend, frequency, and variability
+- Rule-based tips in the Insights tab
 
 ## 📱 Dashboard Tabs
 
-1. **📈 Overview** - Monthly trends and category comparison
-2. **🏷️ Category Analysis** - Spending breakdown with detailed statistics
-3. **📅 Trends & Patterns** - Historical trends and spending heatmaps
-4. **🔮 Forecast** - Predictive analytics for future spending
-5. **💡 Insights** - Key findings and intelligent recommendations
+1. **📈 Overview** — Monthly trends and category comparison  
+2. **🏷️ Category Analysis** — Spending breakdown with a statistics table  
+3. **📅 Trends & Patterns** — Category trends and spending heatmap  
+4. **🔮 Forecast** — Historical series plus projected months (slider 1–12)  
+5. **💡 Insights** — Key findings and recommendations  
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-- Python 3.8 or higher
-- pip package manager
+
+- Python 3.8 or higher  
+- pip  
 
 ### Installation
 
 1. **Clone the repository**
+
 ```bash
-git clone https://github.com/yourusername/family-budget-intelligence.git
+git clone https://github.com/Mykeil-tzul/family-budget-intelligence.git
 cd family-budget-intelligence
 ```
 
 2. **Create a virtual environment** (recommended)
+
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 ```
 
 3. **Install dependencies**
+
 ```bash
 pip install -r requirements.txt
 ```
 
 4. **Run the application**
+
 ```bash
-streamlit run family_budget_app.py
+streamlit run app.py
 ```
 
-5. **Open in browser**
-Navigate to `http://localhost:8501` (typically opens automatically)
+5. **Open in the browser** — usually `http://localhost:8501`
+
+## Live demo
+
+[Launch Dashboard →](YOUR_STREAMLIT_URL)
 
 ## 📂 Project Structure
 
 ```
 family-budget-intelligence/
-├── family_budget_app.py          # Main Streamlit application
-├── requirements.txt              # Python dependencies
-├── sample_transactions.csv       # Sample data (optional)
-├── README.md                     # Project documentation
-└── .gitignore                    # Git ignore file
+├── app.py                 # Main Streamlit application
+├── requirements.txt       # Python dependencies
+├── sample_transactions.csv   # Optional; app falls back to generated sample data
+├── README.md
+└── .gitignore
 ```
 
 ## 📊 Data Format
 
-The application expects a CSV file with the following columns:
+The app reads a CSV with at least:
 
 ```csv
 date,category,amount,description
@@ -96,142 +112,58 @@ date,category,amount,description
 2024-04-02,Utilities,120.00,Electric bill
 ```
 
-**Columns:**
-- `date`: Transaction date (YYYY-MM-DD format)
-- `category`: Spending category (e.g., Groceries, Entertainment, etc.)
-- `amount`: Transaction amount in dollars
-- `description`: Optional transaction description
+**Columns**
 
-**Supported Categories:**
-- Groceries
-- Utilities
-- Entertainment
-- Dining Out
-- Transportation
-- Shopping
-- Healthcare
-- Other
+- `date` — Transaction date (parseable by pandas, e.g. YYYY-MM-DD)  
+- `category` — Spending category  
+- `amount` — Numeric amount  
+- `description` — Optional text  
+
+Place the file as `sample_transactions.csv` in the project root, or rely on the built-in sample generator in `app.py`.
 
 ## 🎨 Key Technologies
 
-- **Streamlit**: Interactive web framework for rapid development
-- **Pandas**: Data manipulation and analysis
-- **NumPy**: Numerical computing and statistical analysis
-- **Plotly**: Interactive, publication-quality visualizations
-- **Python 3**: Core programming language
-
-## 📈 Visualization Types
-
-- **Pie Charts**: Category spending distribution
-- **Line Charts**: Trend analysis with forecasts
-- **Bar Charts**: Category comparisons
-- **Heatmaps**: Weekly/daily spending patterns
-- **KPI Cards**: Key performance metrics
+- **Streamlit** — UI and layout  
+- **Pandas** — Data handling  
+- **NumPy** — Numeric helpers (trends, samples)  
+- **Plotly** — Interactive charts  
+- **Python 3**  
 
 ## 🔧 Configuration
 
-### Customizing Categories
-Edit the `categories` dictionary in the `generate_sample_data()` function to match your spending categories.
-
-### Adjusting Forecast Period
-Use the slider in the Forecast tab to predict spending 1-12 months ahead.
-
-### Date Range Selection
-Use the sidebar date picker to focus on specific time periods for analysis.
-
-## 📊 Sample Data
-
-The application comes with built-in sample data generation. To use your own data:
-
-1. Create a `sample_transactions.csv` file in the project root
-2. Run the application - it will automatically load your CSV file
-3. Ensure your CSV matches the data format specification above
-
-## 🎯 Analytics Capabilities
-
-### Spending Analysis
-- Total spending by category and time period
-- Average daily spending calculations
-- Transaction frequency analysis
-- Spending variability detection
-
-### Trend Analysis
-- Monthly spending trends with polynomial fitting
-- Category-specific trend lines
-- Year-over-year comparisons
-- Spending growth/decline identification
-
-### Predictive Analytics
-- Exponential smoothing for spending forecasts
-- Confidence intervals for predictions
-- Multi-month forward projections
-
-### Pattern Detection
-- Daily and weekly spending patterns
-- Seasonal spending trends
-- Peak spending periods identification
-- Anomaly detection capabilities
-
-## 💾 Export Features
-
-- **Full Dataset CSV**: Export complete transaction history
-- **Summary Reports**: Quick overview of key metrics
-- **Category Breakdowns**: Detailed category statistics
-- **Forecast Data**: Export spending predictions
+- **Categories (demo data)** — Adjust the `categories` dict inside `generate_sample_data()` in `app.py`.  
+- **Forecast horizon** — Use the slider on the Forecast tab (1–12 months).  
+- **Date range** — Use the sidebar date picker.  
 
 ## 🔐 Privacy & Security
 
-- All data processing happens locally on your machine
-- No data is sent to external servers
-- No third-party tracking or analytics
-- Export data remains under your control
+- Processing is local unless you deploy the app yourself.  
+- No built-in third-party analytics in the app code.  
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome via Pull Request.
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## 📧 Contact
-
-For questions or suggestions, please open an issue on GitHub or contact the project maintainer.
-
-## 🙏 Acknowledgments
-
-- Streamlit team for the amazing framework
-- Plotly for beautiful visualizations
-- Pandas community for data manipulation tools
-
-## 🔄 Version History
-
-### v1.0.0 (2025-04-03)
-- Initial release
-- Core analytics and visualization features
-- Interactive dashboard with filters
-- Forecasting capabilities
-- Export functionality
+This project is licensed under the MIT License — see the LICENSE file if present.
 
 ## 📚 Resources
 
-- [Streamlit Documentation](https://docs.streamlit.io/)
-- [Plotly Documentation](https://plotly.com/python/)
-- [Pandas Documentation](https://pandas.pydata.org/docs/)
-- [Python Official Documentation](https://docs.python.org/3/)
+- [Streamlit Documentation](https://docs.streamlit.io/)  
+- [Plotly Python](https://plotly.com/python/)  
+- [Pandas Documentation](https://pandas.pydata.org/docs/)  
 
-## 🎓 Learning Outcomes
+## 🔄 Version History
 
-This project demonstrates:
-- Full-stack data science application development
-- Interactive web application design
-- Time-series analysis and forecasting
-- Data visualization best practices
-- Real-time data filtering and aggregation
-- Responsive UI/UX design
-- Professional code organization
-- Documentation standards
+### v1.0.0 (2026-04-03)
+
+- Initial dashboard release with tabs, filters, forecast, and export  
 
 ---
 
-**Made with ❤️ for better financial decisions**
+## Built by
+
+[Myke Tzul](https://mykeil-tzul.github.io/myke-portfolio/) · Data Scientist | Client Consulting Analyst @ Visa  
+
+**Made with care for clearer financial decisions**
