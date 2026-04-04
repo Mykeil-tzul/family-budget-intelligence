@@ -1,6 +1,6 @@
 # 💰 Family Budget Intelligence Dashboard
 
-An interactive personal finance analytics app built with Python, pandas, Streamlit, and Plotly. The app transforms raw bank CSV exports into spending trends, category breakdowns, forecasts, and actionable budget insights.
+An interactive personal finance analytics app built with Python, pandas, Streamlit, and Plotly. The app transforms raw bank CSV exports into spending trends, category breakdowns, forecasts, and actionable budget insights. This project simulates a real-world analytics workflow: ingesting raw financial data, transforming it into business-ready insights, and delivering it through an interactive product interface.
 
 ## Live Demo
 
@@ -19,9 +19,16 @@ An interactive personal finance analytics app built with Python, pandas, Streaml
 - Simple forward spending forecast and an insights / recommendations tab
 - Download full data or a short summary as CSV
 
-## Dashboard Preview
-![Overview](images/family-budget-overview.png)
-![Forecast](images/family-budget-forecast.png)
+## How Python Is Used
+
+Python powers the full analytics workflow in this project:
+
+- **Data ingestion:** reads uploaded or sample CSV transaction data
+- **Data cleaning:** standardizes columns, parses dates, converts numeric values, and removes invalid rows
+- **Feature engineering:** creates month, weekday, and week-level fields for deeper analysis
+- **Analytics:** calculates KPIs such as total spend, average transaction size, spending trends, and category-level breakdowns
+- **Forecasting:** generates forward-looking spending estimates
+- **App delivery:** powers the Streamlit interface, interactive filters, charts, and export tools
 
 ## 🎯 Features
 
@@ -62,7 +69,7 @@ An interactive personal finance analytics app built with Python, pandas, Streaml
 ### Prerequisites
 
 - Python 3.8 or higher  
-- pip  
+- pip
 
 ### Installation
 
@@ -94,9 +101,6 @@ streamlit run app.py
 
 5. **Open in the browser** — usually `http://localhost:8501`
 
-## Live demo
-
-[Launch Dashboard →](YOUR_STREAMLIT_URL)
 
 ## 📂 Project Structure
 
@@ -139,6 +143,11 @@ Place the file as `sample_transactions.csv` in the project root, or rely on the 
 
 ## Skills Demonstrated
 
+- Python
+- pandas
+- NumPy
+- Streamlit
+- Plotly
 - Data Cleaning
 - Exploratory Data Analysis
 - KPI Development
@@ -193,6 +202,6 @@ This project is licensed under the MIT License — see the LICENSE file if prese
 
 ## Built by
 
-[Myke Tzul](https://mykeil-tzul.github.io/myke-portfolio/) · Data Scientist | Client Consulting Analyst @ Visa  
+[Myke Tzul](https://mykeil-tzul.github.io/myke-portfolio/) 
 
 **Made with care for clearer financial decisions**
