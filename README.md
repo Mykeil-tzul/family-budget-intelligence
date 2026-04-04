@@ -1,6 +1,10 @@
 # 💰 Family Budget Intelligence Dashboard
 
-A professional, data-driven Streamlit web application for comprehensive family budget analysis and financial intelligence. Built with advanced analytics, interactive visualizations, and actionable insights.
+An interactive personal finance analytics app built with Python, pandas, Streamlit, and Plotly. The app transforms raw bank CSV exports into spending trends, category breakdowns, forecasts, and actionable budget insights.
+
+## Live Demo
+
+[Launch Family Budget Intelligence](https://family-budget-intelligence-m.streamlit.app/)
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.34-red)
